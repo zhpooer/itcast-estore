@@ -1,4 +1,4 @@
-name := "learn-seed"
+name := "estore-demo"
 
 version := "1.0.0"
 
@@ -32,8 +32,6 @@ libraryDependencies += "javax.servlet" % "jstl" % "1.2"
 
 libraryDependencies += "org.apache.tomcat" % "el-api" % "6.0.39" % "provided"
 
-libraryDependencies += "dom4j" % "dom4j" % "1.6.1"
-
 libraryDependencies += "jaxen" % "jaxen" % "1.1.6"
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "1.9.2" % "test"
@@ -45,3 +43,13 @@ libraryDependencies += "junit" % "junit" % "4.11" % "test"
 libraryDependencies += "com.novocode" % "junit-interface" % "0.10" % "test"
 
 libraryDependencies += "commons-beanutils" % "commons-beanutils" % "1.9.1"
+
+libraryDependencies += "org.apache.ant" % "ant" % "1.9.3"
+
+libraryDependencies += "com.h2database" % "h2" % "1.4.177"
+
+libraryDependencies += "c3p0" % "c3p0" % "0.9.1.2"
+
+libraryDependencies += "commons-dbutils" % "commons-dbutils" % "1.5"
+
+libraryDependencies += "javax.mail" % "mail" % "1.4"

@@ -6,14 +6,4 @@
   version="2.5"
   >
 
-  <servlet>
-    <servlet-name>xwp template</servlet-name>
-    <servlet-class>com.earldouglas.xwptemplate.XwpTemplateServlet</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>xwp template</servlet-name>
-    <url-pattern>/*</url-pattern>
-  </servlet-mapping>
-
 </web-app>
