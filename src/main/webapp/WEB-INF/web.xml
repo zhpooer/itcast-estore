@@ -10,7 +10,15 @@
 		<servlet-name>ActiveServlet</servlet-name>
 		<servlet-class>io.zhpooer.estore.web.servlet.ActiveServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>io.zhpooer.estore.web.servlet.LoginServlet</servlet-class>
+	</servlet>
 
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>RegistServlet</servlet-name>
 		<url-pattern>/regist</url-pattern>

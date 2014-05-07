@@ -23,7 +23,7 @@ public class EncoderFilter implements Filter {
     @Override
     public void doFilter(ServletRequest req, ServletResponse resp,
             FilterChain chain) throws IOException, ServletException {
-        System.out.println(encoding);
+        // FIXME 加上这个页面样式变乱
         // 解决post乱码
         req.setCharacterEncoding(encoding);
 //        // 解决输出乱码

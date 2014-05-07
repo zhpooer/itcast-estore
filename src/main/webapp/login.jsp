@@ -43,26 +43,27 @@
 									  <div class="login_main_mid">
 									    <div class="login_content_top">请登录Estore商场</div>
 									    <div class="login_content_line"></div>
-									    <form action="index.jsp" method="post">
+									    <div>${ error }</div>
+									    <form action="${pageContext.request.contextPath }/login" method="post">
 									    <dl class="login_content">
 									       <dt>用户名：</dt>
-									       <dd><input id="email" type="text" class="login_content_input" /></dd>
+									       <dd><input id="email" type="text" name="email" value="${cookie.email.value}" class="login_content_input" /></dd>
 									    </dl>
 									     <dl class="login_content">
 									       <dt>密码：</dt>
 									       <dd>
-									         <input id="password" type="password" class="login_content_input" />
+									         <input id="password" type="password" name="password" class="login_content_input" />
 									       </dd>
 									     </dl>
 									     <dl class="login_content">
 									     	<dt></dt>
 									     	<dd>
-										     	<input type="checkbox" name="remember" value="on"/>记住用户 
+										     	<input type="checkbox" name="remember" checked="checked"/>记住用户 
 									     	</dd>
 									     </dl>
 									     <dl class="login_content">
 									       <dt></dt>
-									       <dd><input id="btn" value=" " type="submit" class="login_btn_out" /></dd>
+									       <dd><input id="btn" value="登陆" type="submit" class="login_btn_out" /></dd>
 									    </dl>
 									    </form>
 									    <div class="login_content_dotted"></div>

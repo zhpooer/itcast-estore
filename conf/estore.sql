@@ -36,3 +36,7 @@ create table if not exists orderitem(
    constraint order_id_fk foreign key(order_id) references orders(id),
    constraint prodect_id_fk foreign key(product_id) references product(id)
 );
+
+ 
+insert into user( email, password, nickname, role, active, activecode) values ('a@b.com', '123', 'zhpooer', 'normal', 0, null);
+insert into user( email, password, nickname, role, active, activecode) values ('b@b.com', '123', 'zhpooer', 'normal', 1, null);

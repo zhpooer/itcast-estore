@@ -45,4 +45,16 @@ public class UserDaoImpl implements UserDao {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public User login(User user) {
+        String sql = "select * from user where email=? and password=?";
+        try {
+            return qr.query(TransactionManager.getConnection(), sql,
+                    new BeanHandler<>(User.class), user.getEmail(), user.getPassword());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }

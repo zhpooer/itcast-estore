@@ -21,15 +21,20 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void regist(User u) {
-        // 发送激活邮件
+
         String activeCode = UUID.randomUUID().toString();
+
+        u.setActive(0);
+        u.setActivecode(activeCode);
+        u.setRole("normal");
+        dao.insert(u);
 
         Properties props = new Properties();
         props.setProperty("mail.smtp.host", "smtp.163.com");
         props.setProperty("mail.transport.protocol", "smtp");
-        props.put("mail.smtp.auth","true");
+        props.put("mail.smtp.auth", "true");
         Session session = Session.getInstance(props);
-
+        // 发送激活邮件
 
         // TODO 提取发邮件方法, 申请发邮件账号
         MimeMessage msg = new MimeMessage(session);
@@ -50,10 +55,6 @@ public class UserServiceImpl implements UserService {
             throw new RuntimeException(e);
         }
 
-        u.setActive(0);
-        u.setActivecode(activeCode);
-        u.setRole("normal");
-        dao.insert(u);
     }
 
     @Override
@@ -72,6 +73,11 @@ public class UserServiceImpl implements UserService {
                 return Constants.ACTIVEMAIL_OK;
             }
         }
+    }
+
+    @Override
+    public User login(User user) {
+        return dao.login(user);
     }
 
 }

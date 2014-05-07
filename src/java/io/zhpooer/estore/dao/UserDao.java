@@ -8,4 +8,6 @@ public interface UserDao {
     public User findByActiveCode(String activeCode);
 
     public void updateActive(int id);
+
+    public User login(User user);
 }
