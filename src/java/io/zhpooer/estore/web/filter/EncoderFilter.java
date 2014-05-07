@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequestWrapper;
 
 public class EncoderFilter implements Filter {
 
-    private String encoding = "utf-8";
+    private String encoding = "UTF-8";
 
     @Override
     public void destroy() {}
@@ -23,9 +23,10 @@ public class EncoderFilter implements Filter {
     @Override
     public void doFilter(ServletRequest req, ServletResponse resp,
             FilterChain chain) throws IOException, ServletException {
+        System.out.println(encoding);
         // 解决post乱码
         req.setCharacterEncoding(encoding);
-        // 解决输出乱码
+//        // 解决输出乱码
         resp.setCharacterEncoding(encoding);
         resp.setContentType("text/html;charset=" + encoding);
         chain.doFilter(req, resp);

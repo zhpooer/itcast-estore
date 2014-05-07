@@ -6,22 +6,30 @@
 		<servlet-name>RegistServlet</servlet-name>
 		<servlet-class>io.zhpooer.estore.web.servlet.RegistServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>ActiveServlet</servlet-name>
+		<servlet-class>io.zhpooer.estore.web.servlet.ActiveServlet</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>RegistServlet</servlet-name>
 		<url-pattern>/regist</url-pattern>
 	</servlet-mapping>
-	
+	<servlet-mapping>
+		<servlet-name>ActiveServlet</servlet-name>
+		<url-pattern>/active</url-pattern>
+	</servlet-mapping>
+
 	<filter>
 		<filter-name>EncoderFilter</filter-name>
 		<filter-class>io.zhpooer.estore.web.filter.EncoderFilter</filter-class>
 		<init-param>
 			<param-name>encoding</param-name>
-			<param-value>utf-8</param-value>
+			<param-value>UTF-8</param-value>
 		</init-param>
 	</filter>
-<!--<filter-mapping>
+	<filter-mapping>
 		<filter-name>EncoderFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>  -->
+	</filter-mapping>
 </web-app>

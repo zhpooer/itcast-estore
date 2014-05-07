@@ -33,7 +33,6 @@ public class RegistServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
         HttpSession session = req.getSession();
-        // TODO (String) null ok?
         boolean validate = userBean.validate((String)session.getAttribute("checkcode"));
         session.removeAttribute("checkcode");
         if(!validate) {
