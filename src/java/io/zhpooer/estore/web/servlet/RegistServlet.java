@@ -25,7 +25,6 @@ public class RegistServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        // TODO 乱码处理
         UserBean userBean = new UserBean();
         try {
             BeanUtils.populate(userBean, req.getParameterMap());

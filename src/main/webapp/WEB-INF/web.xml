@@ -14,18 +14,58 @@
 		<servlet-name>LoginServlet</servlet-name>
 		<servlet-class>io.zhpooer.estore.web.servlet.LoginServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>ProductAddServlet</servlet-name>
+		<servlet-class>io.zhpooer.estore.web.servlet.ProductAddServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ProductSearchServlet</servlet-name>
+		<servlet-class>io.zhpooer.estore.web.servlet.ProductSearchServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AddCartServlet</servlet-name>
+		<servlet-class>io.zhpooer.estore.web.servlet.AddCartServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UpdateCartItemServlet</servlet-name>
+		<servlet-class>io.zhpooer.estore.web.servlet.UpdateCartItemServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DeleteCartItemServlet</servlet-name>
+		<servlet-class>io.zhpooer.estore.web.servlet.DeleteCartItemServlet</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
+		<servlet-name>DeleteCartItemServlet</servlet-name>
+		<url-pattern>/servlet/deleteCartItem</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateCartItemServlet</servlet-name>
+		<url-pattern>/servlet/updateCartItem</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddCartServlet</servlet-name>
+		<url-pattern>/servlet/addCart</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProductSearchServlet</servlet-name>
+		<url-pattern>/servlet/productSearch </url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProductAddServlet</servlet-name>
+		<url-pattern>/servlet/productAdd</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>LoginServlet</servlet-name>
-		<url-pattern>/login</url-pattern>
+		<url-pattern>/servlet/login</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>RegistServlet</servlet-name>
-		<url-pattern>/regist</url-pattern>
+		<url-pattern>/servlet/regist</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>ActiveServlet</servlet-name>
-		<url-pattern>/active</url-pattern>
+		<url-pattern>/servlet/active</url-pattern>
 	</servlet-mapping>
 
 	<filter>
@@ -38,6 +78,6 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>EncoderFilter</filter-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>/servlet/*</url-pattern>
 	</filter-mapping>
 </web-app>

@@ -15,6 +15,8 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import org.apache.tools.ant.taskdefs.Copy;
+
 public class UserServiceImpl implements UserService {
 
     UserDao dao = new UserDaoImpl();
@@ -28,7 +30,6 @@ public class UserServiceImpl implements UserService {
         u.setActivecode(activeCode);
         u.setRole("normal");
         dao.insert(u);
-
         Properties props = new Properties();
         props.setProperty("mail.smtp.host", "smtp.163.com");
         props.setProperty("mail.transport.protocol", "smtp");
@@ -43,7 +44,7 @@ public class UserServiceImpl implements UserService {
             msg.setRecipient(RecipientType.TO,
                     new InternetAddress(u.getEmail()));
             msg.setSubject("欢迎您加入, 请激活");
-            String url = "http://localhost:8080/active?activecode="
+            String url = "http://localhost:8080/servlet/active?activecode="
                     + activeCode;
             String content = "<a href='" + url + "'>点击激活</a>";
             msg.setContent(content, "text/html;charset=utf-8");

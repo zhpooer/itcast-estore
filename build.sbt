@@ -53,3 +53,7 @@ libraryDependencies += "c3p0" % "c3p0" % "0.9.1.2"
 libraryDependencies += "commons-dbutils" % "commons-dbutils" % "1.5"
 
 libraryDependencies += "javax.mail" % "mail" % "1.4"
+
+libraryDependencies += "commons-fileupload" % "commons-fileupload" % "1.3.1"
+
+libraryDependencies += "commons-io" % "commons-io" % "2.4"

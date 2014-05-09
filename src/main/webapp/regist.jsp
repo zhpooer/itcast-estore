@@ -49,7 +49,7 @@
 										</div>
 										<div class="register_dotted_bg"></div>
 										<div class="register_message">
-											<form action="${pageContext.request.contextPath}/regist"
+											<form action="${pageContext.request.contextPath}/servlet/regist"
 												method="post">
 												<dl class="register_row">
 													<dt>Email地址：</dt>

@@ -18,15 +18,15 @@ public class EncoderFilter implements Filter {
     private String encoding = "UTF-8";
 
     @Override
-    public void destroy() {}
+    public void destroy() { }
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse resp,
             FilterChain chain) throws IOException, ServletException {
-        // FIXME 加上这个页面样式变乱
+        // TODO jetty 貌似已经解决了get乱码, 要检查, 如果是tomcat, 要加上Get乱码解决
         // 解决post乱码
         req.setCharacterEncoding(encoding);
-//        // 解决输出乱码
+        // 解决输出乱码
         resp.setCharacterEncoding(encoding);
         resp.setContentType("text/html;charset=" + encoding);
         chain.doFilter(req, resp);
@@ -35,26 +35,26 @@ public class EncoderFilter implements Filter {
     @Override
     public void init(FilterConfig config) throws ServletException {
         String encoding = config.getInitParameter("encoding");
-        if(encoding != null) {
+        if (encoding != null) {
             this.encoding = encoding;
         }
     }
 
 }
 
-class EncodingHttpRequest extends HttpServletRequestWrapper{
+class EncodingHttpRequest extends HttpServletRequestWrapper {
 
     public EncodingHttpRequest(HttpServletRequest request) {
         super(request);
     }
-    
+
     private boolean isGet() {
         return this.getMethod().equalsIgnoreCase("get");
     }
 
     @Override
     public String getParameter(String name) {
-        return super.getParameter(name);            
+        return super.getParameter(name);
     }
 
     @Override
@@ -73,6 +73,6 @@ class EncodingHttpRequest extends HttpServletRequestWrapper{
     public String[] getParameterValues(String name) {
         // TODO Auto-generated method stub
         return super.getParameterValues(name);
-    }   
+    }
 
 }

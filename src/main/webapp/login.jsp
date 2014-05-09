@@ -44,7 +44,7 @@
 									    <div class="login_content_top">请登录Estore商场</div>
 									    <div class="login_content_line"></div>
 									    <div>${ error }</div>
-									    <form action="${pageContext.request.contextPath }/login" method="post">
+									    <form action="${pageContext.request.contextPath }/serlvet/login" method="post">
 									    <dl class="login_content">
 									       <dt>用户名：</dt>
 									       <dd><input id="email" type="text" name="email" value="${cookie.email.value}" class="login_content_input" /></dd>

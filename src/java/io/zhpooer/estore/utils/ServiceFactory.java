@@ -21,12 +21,11 @@ public class ServiceFactory {
                 Object result = null;
                 try {
                     result = method.invoke(instance, args);
-                    TransactionManager.commit();
                 } catch (Exception e) {
                     TransactionManager.rollback();
                     throw new RuntimeException(e);
-//                    e.printStackTrace();
                 } finally {
+                    TransactionManager.commit();
                     TransactionManager.release();
                 }
                 return result;

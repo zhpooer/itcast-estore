@@ -12,7 +12,7 @@ create table if not exists product (
     id int auto_increment primary key,
     name varchar(255) not null,
     category varchar(255) not null,
-    markedprice double,
+    marketprice double,
     estoreprice double,
     pnum int,
     imgurl varchar(255) not null,
@@ -38,5 +38,5 @@ create table if not exists orderitem(
 );
 
  
-insert into user( email, password, nickname, role, active, activecode) values ('a@b.com', '123', 'zhpooer', 'normal', 0, null);
-insert into user( email, password, nickname, role, active, activecode) values ('b@b.com', '123', 'zhpooer', 'normal', 1, null);
+-- insert into user( email, password, nickname, role, active, activecode) values ('a@b.com', '123', 'zhpooer', 'normal', 0, null);
+-- insert into user( email, password, nickname, role, active, activecode) values ('b@b.com', '123', 'zhpooer', 'normal', 1, null);
