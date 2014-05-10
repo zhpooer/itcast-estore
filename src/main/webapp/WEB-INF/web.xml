@@ -34,7 +34,23 @@
 		<servlet-name>DeleteCartItemServlet</servlet-name>
 		<servlet-class>io.zhpooer.estore.web.servlet.DeleteCartItemServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>OrderAddServlet</servlet-name>
+		<servlet-class>io.zhpooer.estore.web.servlet.OrderAddServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>OrderSearchServlet</servlet-name>
+		<servlet-class>io.zhpooer.estore.web.servlet.OrderSearchServlet</servlet-class>
+	</servlet>
 
+	<servlet-mapping>
+		<servlet-name>OrderSearchServlet</servlet-name>
+		<url-pattern>/servlet/orderSearch</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OrderAddServlet</servlet-name>
+		<url-pattern>/servlet/orderAdd</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>DeleteCartItemServlet</servlet-name>
 		<url-pattern>/servlet/deleteCartItem</url-pattern>

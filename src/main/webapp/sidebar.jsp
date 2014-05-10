@@ -28,7 +28,7 @@
 								class="r"></span><span class="t">查看商品</span></a></li>
 						<li><a href="${pageContext.request.contextPath}/cart.jsp"><span class="l"></span><span
 								class="r"></span><span class="t">查看购物车</span></a></li>
-						<li><a href="${pageContext.request.contextPath}/order.jsp"><span class="l"></span><span
+						<li><a href="${pageContext.request.contextPath}/servlet/orderSearch"><span class="l"></span><span
 								class="r"></span><span class="t">查看订单</span></a></li>
 						<li><a href="#"><span class="l"></span><span class="r"></span><span
 								class="t">关于我们</span></a></li>

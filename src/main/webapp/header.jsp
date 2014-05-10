@@ -2,7 +2,7 @@
 <div class="art-header">
 	<div class="art-header-png"></div>
 	<div class="art-header-jpeg">
-		您好，欢迎来到Estore购物商城！<a href="login.jsp">[登录]</a> <a href="regist.jsp">[免费注册]</a>
+		您好，欢迎来到Estore购物商城！<a href="${pageContext.request.contextPath}/login.jsp">[登录]</a> <a href="${pageContext.request.contextPath}/regist.jsp">[免费注册]</a>
 	</div>
 	<div class="art-logo">
 		<h1 id="name-text" class="art-logo-name">

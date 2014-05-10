@@ -4,6 +4,15 @@ public class OrderItem {
     private String order_id;
     private int product_id;
     private int buynum;
+    private Product product;
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 
     public String getOrder_id() {
         return order_id;

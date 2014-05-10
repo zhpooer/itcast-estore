@@ -1,6 +1,8 @@
 package io.zhpooer.estore.entity;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Order {
     private String id;
@@ -9,6 +11,24 @@ public class Order {
     private int paystate;
     private Timestamp createtime;
     private int user_id;
+    private String nickname;
+    private List<OrderItem> orderItems = new ArrayList<OrderItem>();
+
+    public List<OrderItem> getOrderItems() {
+        return orderItems;
+    }
+
+    public void setOrderItems(List<OrderItem> orderItems) {
+        this.orderItems = orderItems;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
 
     public String getId() {
         return id;

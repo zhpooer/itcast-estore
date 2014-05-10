@@ -6,10 +6,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Estore购物商城</title>
 
-    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-    <!--[if IE 6]><link rel="stylesheet" href="style.ie6.css" type="text/css" media="screen" /><![endif]-->
-    <!--[if IE 7]><link rel="stylesheet" href="style.ie7.css" type="text/css" media="screen" /><![endif]-->
-    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/style.css" type="text/css" media="screen" />
+    <!--[if IE 6]><link rel="stylesheet" href="${pageContext.request.contextPath }/style.ie6.css" type="text/css" media="screen" /><![endif]-->
+    <!--[if IE 7]><link rel="stylesheet" href="${pageContext.request.contextPath }/style.ie7.css" type="text/css" media="screen" /><![endif]-->
+    <script type="text/javascript" src="${pageContext.request.contextPath }/script.js"></script>
 </head>
 <body>
 <div id="art-main">
@@ -44,7 +44,7 @@
 									    <div class="login_content_top">请登录Estore商场</div>
 									    <div class="login_content_line"></div>
 									    <div>${ error }</div>
-									    <form action="${pageContext.request.contextPath }/serlvet/login" method="post">
+									    <form action="${pageContext.request.contextPath }/servlet/login" method="post">
 									    <dl class="login_content">
 									       <dt>用户名：</dt>
 									       <dd><input id="email" type="text" name="email" value="${cookie.email.value}" class="login_content_input" /></dd>

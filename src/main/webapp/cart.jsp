@@ -87,7 +87,7 @@ function changeNum(id, maxnum, num) {
 											<c:set var="totalsave" value="0" />
 											<c:forEach var="item" items="${cart}">
 											<c:set var="totalprice" value="${totalprice + item.key.estoreprice*item.value }" />
-											<c:set var="totalsave" value="${totalprice + (item.key.marketprice - item.key.estoreprice)*item.value }" />
+											<c:set var="totalsave" value="${totalsave + (item.key.marketprice - item.key.estoreprice)*item.value }" />
 												<tr class="shopping_product_list" id="shoppingProduct_05">
 													<td class="shopping_product_list_1"><a href="#"
 														class="blue">${item.key.name }</a></td>
