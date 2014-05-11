@@ -42,7 +42,15 @@
 		<servlet-name>OrderSearchServlet</servlet-name>
 		<servlet-class>io.zhpooer.estore.web.servlet.OrderSearchServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>OrderCancelServlet</servlet-name>
+		<servlet-class>io.zhpooer.estore.web.servlet.OrderCancelServlet</servlet-class>
+	</servlet>
 
+	<servlet-mapping>
+		<servlet-name>OrderCancelServlet</servlet-name>
+		<url-pattern>/servlet/orderCancel</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>OrderSearchServlet</servlet-name>
 		<url-pattern>/servlet/orderSearch</url-pattern>
@@ -84,6 +92,10 @@
 		<url-pattern>/servlet/active</url-pattern>
 	</servlet-mapping>
 
+	<listener>
+		<listener-class>io.zhpooer.estore.web.filter.OrderCleanListener</listener-class>
+	</listener>
+
 	<filter>
 		<filter-name>EncoderFilter</filter-name>
 		<filter-class>io.zhpooer.estore.web.filter.EncoderFilter</filter-class>
@@ -96,4 +108,14 @@
 		<filter-name>EncoderFilter</filter-name>
 		<url-pattern>/servlet/*</url-pattern>
 	</filter-mapping>
+
+	<error-page>
+		<error-code>400</error-code>
+		<location>404.html</location>
+	</error-page>
+	
+	<error-page>
+		<error-code>500</error-code>
+		<location>500.jsp</location>
+	</error-page>
 </web-app>

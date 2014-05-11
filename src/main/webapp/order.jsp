@@ -59,8 +59,9 @@
 											<fmt:formatDate value="${o.createtime}" pattern="yyyy-MM-dd" />
 										</div>
 										<div>
-											支付状态： <font color="red">未支付</font> <a href="#">取消订单</a> <a
-												href="pay.jsp?orderid=${order.id }&money=${order.money}">在线付款</a>
+											支付状态： <font color="red">未支付</font> <a
+												href="${pageContext.request.contextPath}/servlet/orderCancel">取消订单</a>
+											<a href="pay.jsp?orderid=${order.id }&money=${order.money}">在线付款</a>
 										</div>
 										<div>收货人信息 ：${o.receiverinfo }</div>
 										<div class="shopping_list_top">订单包含以下商品</div>

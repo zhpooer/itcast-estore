@@ -21,7 +21,10 @@ public class ProductSearchServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        // TODO 页面优化
+        // TODO 分页控制, 提取标签
+        // TODO 集群处理
+        // TODO Filter 缓存优化
+        
         List<Product> products = productService.listAllProducts();
         req.setAttribute("products", products);
         req.getRequestDispatcher(req.getContextPath() + "/product.jsp").forward(req, resp);

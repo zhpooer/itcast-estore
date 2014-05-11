@@ -57,3 +57,6 @@ libraryDependencies += "javax.mail" % "mail" % "1.4"
 libraryDependencies += "commons-fileupload" % "commons-fileupload" % "1.3.1"
 
 libraryDependencies += "commons-io" % "commons-io" % "2.4"
+
+libraryDependencies += "log4j" % "log4j" % "1.2.17"
+            

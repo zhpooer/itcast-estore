@@ -12,4 +12,8 @@ public interface OrderService {
 
     List<Order> showOrders(User user);
 
+    void cancelOrder(String orderid);
+
+    void cleanUnpayOrders();
+
 }

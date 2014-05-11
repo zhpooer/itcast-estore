@@ -13,4 +13,8 @@ public interface OrderDao {
 
     List<Order> findAllOrders();
 
+    void deleteOrderItem(String orderid);
+
+    void deleteOrder(String orderid);
+
 }

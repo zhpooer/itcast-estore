@@ -55,7 +55,8 @@ public class OrderDaoImpl implements OrderDao {
             // 根据用户id, 查询用户信息
             sql = "select * from user where id=?";
             for (Order order : orders) {
-                String nickname = queryRunner.query(TransactionManager.getConnection(), sql,
+                String nickname = queryRunner.query(
+                        TransactionManager.getConnection(), sql,
                         new ScalarHandler<String>("nickname"),
                         order.getUser_id());
                 order.setNickname(nickname);
@@ -93,7 +94,8 @@ public class OrderDaoImpl implements OrderDao {
             // 根据用户id, 查询用户信息
             sql = "select * from user where id=?";
             for (Order order : orders) {
-                String nickname = queryRunner.query(TransactionManager.getConnection(), sql,
+                String nickname = queryRunner.query(
+                        TransactionManager.getConnection(), sql,
                         new ScalarHandler<String>("nickname"),
                         order.getUser_id());
                 order.setNickname(nickname);
@@ -114,6 +116,28 @@ public class OrderDaoImpl implements OrderDao {
                 }
             }
             return orders;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void deleteOrderItem(String orderid) {
+        String sql = "delete from orderitem where order_id=?";
+        try {
+            queryRunner
+                    .update(TransactionManager.getConnection(), sql, orderid);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void deleteOrder(String orderid) {
+        String sql = "delete from orders where id=?";
+        try {
+            queryRunner
+                    .update(TransactionManager.getConnection(), sql, orderid);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
